@@ -3,7 +3,7 @@ variable "image_id" {
 }
 
 output "image_id" {
-  value = image_id
+  value = var.image_id
 }
 
 resource "random_string" "random" {
