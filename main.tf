@@ -8,7 +8,7 @@ output "image_id" {
 }
 
 resource "random_string" "random" {
-  length           = 24
+  length           = 25
   special          = true
   override_special = "/@£$"
 }
