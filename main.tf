@@ -1,6 +1,6 @@
 variable "image_id" {
   type = string
-  default = "default1"
+  default = "default12"
 }
 
 output "image_id" {
