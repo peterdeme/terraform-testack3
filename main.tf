@@ -14,13 +14,13 @@ resource "random_string" "random" {
 }
 
 resource "random_string" "random2" {
-  length           = 6
+  length           = 7
   special          = true
   override_special = "/@£$"
 }
 
-resource "random_string" "random3" {
-  length           = 8
+resource "random_string" "random4" {
+  length           = 7
   special          = true
   override_special = "/@£$"
 }
