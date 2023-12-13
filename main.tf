@@ -25,6 +25,20 @@ resource "random_string" "random4" {
   override_special = "/@£$"
 }
 
+resource "random_string" "random8" {
+  length           = 75
+  special          = true
+  override_special = "/@£$"
+}
+
+
+resource "random_string" "random9" {
+  length           = 3
+  special          = true
+  override_special = "/@£$"
+}
+
+
 output "randomstring_result" {
   value = random_string.random.result
 }
