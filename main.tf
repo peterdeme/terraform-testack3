@@ -5,8 +5,8 @@ resource "random_string" "random" {
 }
 
 resource "random_string" "random2" {
-  length           = 6
-  special          = true
+  length           = 7
+  special          = false
   override_special = "/@£$"
 }
 
@@ -16,18 +16,14 @@ resource "random_string" "random3" {
   override_special = "/@£$"
 }
 
-resource "random_string" "random4" {
-  length           = 8
-  special          = true
+resource "random_string" "random12" {
+  length           = 12
+  special          = false
   override_special = "/@£$"
 }
 
 resource "random_pet" "pet1" {
   length = 6
-}
-
-resource "random_pet" "pet2" {
-  length = 7
 }
 
 output "randomstring_result" {
