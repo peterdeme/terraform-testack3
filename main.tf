@@ -1,12 +1,3 @@
-variable "image_id" {
-  type = string
-  default = "default"
-}
-
-output "image_id" {
-  value = var.image_id
-}
-
 resource "random_string" "random" {
   length           = 5
   special          = true
@@ -20,9 +11,23 @@ resource "random_string" "random2" {
 }
 
 resource "random_string" "random3" {
+  length           = 7
+  special          = true
+  override_special = "/@£$"
+}
+
+resource "random_string" "random4" {
   length           = 8
   special          = true
   override_special = "/@£$"
+}
+
+resource "random_pet" "pet1" {
+  length = 6
+}
+
+resource "random_pet" "pet2" {
+  length = 7
 }
 
 output "randomstring_result" {
