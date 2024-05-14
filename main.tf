@@ -33,3 +33,8 @@ resource "random_pet" "pet2" {
 output "randomstring_result" {
   value = random_string.random.result
 }
+
+
+output "VPC_ID" {
+  value = "vp-4535j34j3dd"
+}
