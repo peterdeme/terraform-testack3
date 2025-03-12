@@ -24,7 +24,7 @@ jobs:
           # You will want to replace this endpoint (and the audience) with your
           # own Spacelift account's endpoint.
           SPACELIFT_API_KEY_ENDPOINT: https://aws.spacelift.sh
-          SPACELIFT_API_KEY_ID: oidc::https://github.com/peterdeme::01JP564ZVYT5P9JBGFM2513S23
+          SPACELIFT_API_KEY_ID: oidc::https://github.com/peterdeme::01JP56DW2Q8ESCG8Y3R4D406MH
           SPACELIFT_API_KEY_SECRET: ${{ env.OIDC_TOKEN }}
         run: |
           spacectl whoami
