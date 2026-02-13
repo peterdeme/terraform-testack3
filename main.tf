@@ -1,31 +1,35 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 6.0"
-    }
-  }
-}
+      terraform {
+        required_providers {
+          aws = {
+            source  = "hashicorp/aws"
+            version = "~> 6.0"
+          }
+        }
+      }
 
-provider "aws" {
-  region = "us-east-1"
-}
+      provider "aws" {
+        region = "us-east-1"
+      }
 
-resource "aws_s3_bucket" "orbit_storage" {
-  bucket = "fiery-capsule-stack-${data.aws_caller_identity.current.account_id}"
+      resource "aws_vpc" "main" {
+        cidr_block = "10.0.0.0/16"
+        tags = {
+          name    = "Orbit Labs VPC"
+          project = "Orbit-labs"
+        }
+      }
 
-tags = {
-  name        = "Orbit Labs Storage"
-  managedBy   = "Spacelift"
-  mission     = "First Launch"
-  project     = "Orbit-labs"
-  environment = "demo"
-}
-}
+      resource "aws_subnet" "main" {
+        vpc_id            = aws_vpc.main.id
+        cidr_block        = "10.0.1.0/24"
+        availability_zone = "us-east-1a"
+        tags = {
+          name    = "Orbit Labs Subnet"
+          project = "Orbit-labs"
+        }
+      }
 
-data "aws_caller_identity" "current" {}
-
-output "aws_account_id" {
-  value = data.aws_caller_identity.current.account_id
-}
-
+      output "subnet_id" {
+        value       = aws_subnet.main.id
+        description = "ID of the main subnet"
+      }
