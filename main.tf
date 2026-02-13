@@ -11,6 +11,17 @@ provider "aws" {
   region = "us-east-1"
 }
 
+resource "aws_s3_bucket" "orbit_storage" {
+  bucket = "fiery_capsule_stack-${data.aws_caller_identity.current.account_id}"
+
+  tags = {
+    name      = "Orbit Labs Storage"
+    managedBy = "Spacelift"
+    mission   = "First Launch"
+    project   = "Orbit-labs"
+  }
+}
+
 data "aws_caller_identity" "current" {}
 
 output "aws_account_id" {
