@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "orbit_storage" {
-  bucket = "fiery_capsule_stack-${data.aws_caller_identity.current.account_id}"
+  bucket = "fiery-capsule-stack-${data.aws_caller_identity.current.account_id}"
 
 tags = {
   name        = "Orbit Labs Storage"
