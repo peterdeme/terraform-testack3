@@ -20,6 +20,7 @@ resource "aws_s3_bucket" "orbit_storage" {
     mission   = "First Launch"
     project   = "Orbit-labs"
   }
+}
 
 data "aws_caller_identity" "current" {}
 
