@@ -14,12 +14,14 @@ provider "aws" {
 resource "aws_s3_bucket" "orbit_storage" {
   bucket = "fiery-capsule-stack-${data.aws_caller_identity.current.account_id}"
 
- tags = {
-    name      = "Orbit Labs Storage"
-    managedBy = "Spacelift"
-    mission   = "First Launch"
-    #project   = "Orbit-labs"
+  tags = {
+    name        = "Orbit Labs Storage"
+    managedBy   = "Spacelift"
+    mission     = "First Launch"
+    project     = "Orbit-labs"
+    environment = "demo"
   }
+
 }
 
 data "aws_caller_identity" "current" {}
