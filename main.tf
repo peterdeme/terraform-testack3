@@ -24,10 +24,11 @@ tags = {
         vpc_id            = aws_vpc.main.id
         cidr_block        = "10.0.1.0/24"
         availability_zone = "us-east-1a"
-        tags = {
-          name    = "Orbit Labs Subnet"
-          project = "Orbit-labs"
-        }
+tags = {
+  name    = "Orbit Labs VPC"
+  project = "Orbit-labs"
+  owner   = "Saturnhead"
+}
       }
 
       output "subnet_id" {
