@@ -59,3 +59,7 @@ resource "aws_glue_trigger" "example" {
     job_name = "example-job"
   }
 }
+
+resource "terraform_data" "repro" {
+  input = "\\u0000"
+}
