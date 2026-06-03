@@ -2,4 +2,7 @@ version: "1"
 terraform_version: "1.13.5"
 
 before_init:
-  - curl -sSL -o /tmp/tf.zip https://releases.hashicorp.com/terraform/1.13.5/terraform_1.13.5_linux_amd64.zip && unzip -o /tmp/tf.zip terraform -d /usr/local/bin && chmod +x /usr/local/bin/terraform && terraform version
+  - mkdir -p /tmp/tf && curl -sSL -o /tmp/tf.zip https://releases.hashicorp.com/terraform/1.13.5/terraform_1.13.5_linux_amd64.zip && unzip -o /tmp/tf.zip terraform -d /tmp/tf && chmod +x /tmp/tf/terraform && /tmp/tf/terraform version
+
+before_apply:
+  - mkdir -p /tmp/tf && curl -sSL -o /tmp/tf.zip https://releases.hashicorp.com/terraform/1.13.5/terraform_1.13.5_linux_amd64.zip && unzip -o /tmp/tf.zip terraform -d /tmp/tf && chmod +x /tmp/tf/terraform && /tmp/tf/terraform version
