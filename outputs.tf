@@ -1,3 +1,3 @@
-output "name" {
-  value = random_string.random.id
-}
+# output "name" {
+#   value = random_string.random.id
+# }
